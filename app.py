@@ -13,6 +13,8 @@ def home():
 def import_file():
   files = request.files
   csv_file = files['file']
+  if csv_file == None:
+    return 'Success'
   raw_bytes = csv_file.read()
   arr = numpy_array_from_bytes(raw_bytes)
   shifts = parse_schedule(arr)
