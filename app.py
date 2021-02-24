@@ -1,3 +1,4 @@
+import os
 import flask, math, csv, re, io, datetime, requests
 import numpy as np
 from flask import Flask, request, jsonify
