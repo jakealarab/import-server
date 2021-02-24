@@ -94,7 +94,7 @@ def get_shift_info(name_cell, role_cell, date_cell, time_cell):
 
 
 def add_shift(shift):
-  url = 'http://localhost:8081/addshiftfromname/' + shift['name'] + \
+  url = 'https://mert-app-server.herokuapp.com/addshiftfromname/' + shift['name'] + \
   '/' + shift['role'] + '/' + shift['start'] + '/' + shift['end'] 
   res = requests.get(url)
   print(res.text)
