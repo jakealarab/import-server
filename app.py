@@ -1,9 +1,8 @@
 import flask, math, csv, re, io, datetime, requests
 import numpy as np
-from flask import request, jsonify
+from flask import Flask, request, jsonify
 
-app = flask.Flask(__name__)
-# app.config["DEBUG"] = True
+app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
@@ -100,4 +99,6 @@ def add_shift(shift):
 def print(thing):
   app.logger.info(thing)
 
-app.run()
+if __name__ == '__main__':
+  port = int(os.environ.get("PORT", 5000))
+  app.run(debug=True, port=port)
